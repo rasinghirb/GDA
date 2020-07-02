@@ -1,0 +1,35 @@
+﻿@model List<ViewAllUsers>
+<div class="container border-1">
+    <div class="row" id="Index">
+        <p>
+            <b>Index</b><br />
+            <a asp-action="AddNewUser"><b>Add New User</b></a>
+        </p>
+        <table class="table table-bordered" id="table">
+            <tr>
+                <th scope="col">PIS NO</th>
+                <th scope="col">Name</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Coy</th>
+                <th scope="col">Action</th>
+            </tr>
+
+            @foreach (ViewAllUsers item in Model)
+            {
+                <tr>
+                    <td>@item.PISNo</td>
+                    <td>@item.Name</td>
+                     <td>@item.RankName</td>
+                    <td>@item.CoyName</td>
+                   
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PISNo">Edit</a> |
+                        <a asp-action="Find" asp-route-id="@item.PISNo">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.PISNo">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

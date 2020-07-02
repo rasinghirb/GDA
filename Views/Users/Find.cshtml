@@ -1,0 +1,41 @@
+﻿@model GDA.Models.UserModel
+@{
+    ViewData["Title"] = "Find";
+}
+<div class="container border-light">
+
+    <div class="row" id="UserFind">
+        <div class="font-weight-bold">
+
+            <div class="col-md-4 text-lg-center">
+                <P><b>Find User</b></P>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">User ID</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">User Role</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                     <td>@Html.DisplayFor(model => model.UserId)</td>
+                    <td> @Html.DisplayFor(model => model.UserPassword)</td>
+                    <td>@Html.DisplayFor(model => model.UserRole)</td>
+                    <td> @Html.DisplayFor(model => model.Email)</td>
+                </tr>
+
+            </tbody>
+        </table>
+         <div>
+            <a asp-action="Edit" asp-route-id="@Model.UserId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
